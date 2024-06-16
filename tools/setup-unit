@@ -1150,7 +1150,7 @@ ARGUMENTS
                 Supported: 'apt', 'dnf', and 'yum'.
 
         OS-NAME
-                Supported: 'debian', 'ubuntu', 'fedora', 'rhel', and 'amzn2'.
+                Supported: 'debian', 'ubuntu', 'fedora', 'rhel', 'rocky', and 'amzn2'.
 
         OS-VERSION
                 For most distributions, this should be a numeric value; for
@@ -1286,7 +1286,7 @@ __EOF__";
         ;;
     yum | dnf)
         case "$os_name" in
-        rhel | amzn | fedora)
+        rhel | rocky | amzn | fedora)
             installYumDnf "$pkg_mngr" "$os_name" "$os_version" ${3:+ovr};
             ;;
         *)
